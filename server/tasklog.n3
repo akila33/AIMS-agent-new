@@ -1,0 +1,52 @@
+@prefix ns1: <http://aimicroservice.derby.ac.uk/> .
+
+ns1:43f30f6c-8bd0-403e-96ec-c790e15178ba a ns1:task ;
+    ns1:domain "testing"@en ;
+    ns1:input [ ns1:iodatatype ns1:csv ] ;
+    ns1:output [ ns1:iodatatype ns1:pipeline ] .
+
+ns1:6fe36919-06bf-40d4-96c9-ecd81ebbd371 a ns1:task ;
+    ns1:description "testing"@en ;
+    ns1:input [ ns1:iodatatype ns1:csv ] ;
+    ns1:output [ ns1:iodatatype ns1:pipeline ] .
+
+ns1:abd96163-d18c-43ff-aeac-614ed2373e7e a ns1:task ;
+    ns1:description "testing"@en ;
+    ns1:input [ ns1:iodatatype ns1:csv ] ;
+    ns1:output [ ns1:iodatatype ns1:pipeline ] .
+
+ns1:abfff3fb-91f1-4246-8856-5cacb844aa93 a ns1:task ;
+    ns1:description "testing"@en ;
+    ns1:input [ ns1:iodatatype ns1:csv ] ;
+    ns1:output [ ns1:iodatatype ns1:pipeline ] .
+
+ns1:b7e2bd5f-1c3f-4b3e-ba11-c1d5e43ca431 a ns1:task ;
+    ns1:description "testing"@en ;
+    ns1:input [ ns1:iodatatype ns1:csv ] ;
+    ns1:output [ ns1:iodatatype ns1:pipeline ] .
+
+ns1:bc772ea1-d500-4322-b0af-e360aefaee29 a ns1:task ;
+    ns1:domain "testing"@en ;
+    ns1:input [ ns1:iodatatype ns1:csv ] ;
+    ns1:output [ ns1:iodatatype ns1:pipeline ] .
+
+ns1:de84e995-1863-4422-88c4-ad569532230f a ns1:task ;
+    ns1:description "testing"@en ;
+    ns1:input [ ns1:iodatatype ns1:csv ] ;
+    ns1:output [ ns1:iodatatype ns1:pipeline ] .
+
+ns1:e6f17c7a-412e-402e-9d18-77e708191187 a ns1:task ;
+    ns1:domain "testing"@en ;
+    ns1:input [ ns1:iodatatype ns1:csv ] ;
+    ns1:output [ ns1:iodatatype ns1:pipeline ] .
+
+ns1:f60b6ebd-39f9-4663-a9d4-7a613fed4efe a ns1:task ;
+    ns1:description "testing"@en ;
+    ns1:input [ ns1:iodatatype ns1:csv ] ;
+    ns1:output [ ns1:iodatatype ns1:pipeline ] .
+
+ns1:f86cbee7-11c6-48b1-af7e-c607f9069df0 a ns1:task ;
+    ns1:domain "testing"@en ;
+    ns1:input [ ns1:iodatatype ns1:csv ] ;
+    ns1:output [ ns1:iodatatype ns1:pipeline ] .
+

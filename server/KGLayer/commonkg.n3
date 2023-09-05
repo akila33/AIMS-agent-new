@@ -1,0 +1,4 @@
+@prefix ns1: <http://aimicroservice.derby.ac.uk/> .
+
+ns1:a303e61d-f112-41c3-a002-a2dd40cd4d27 ns1:selectedfeatures "MDVP:Fo(Hz).MDVP:Fhi(Hz).MDVP:Jitter(%).MDVP:Jitter(Abs).MDVP:RAP.MDVP:PPQ.Jitter:DDP.MDVP:Shimmer.MDVP:Shimmer(dB).Shimmer:APQ5.MDVP:APQ.NHR.HNR.RPDE.spread1.spread2.D2.PPE"@en .
+

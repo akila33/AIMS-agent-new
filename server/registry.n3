@@ -1,0 +1,293 @@
+@prefix ns1: <http://aimicroservice.derby.ac.uk/> .
+
+ns1:image_classification_transformer a ns1:Image_classification ;
+    ns1:category ns1:CV_imageclassification ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "transformers"@en ;
+    ns1:description "https://huggingface.co/docs/transformers/tasks/image_classification"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "transformers"@en ;
+    ns1:input [ ns1:paramter [ ns1:iocategory ns1:jpeg ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:label ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:uri ns1:image_classification_pipeline .
+
+ns1:csvjsonmodel a ns1:CsvDatHandler ;
+    ns1:category ns1:data_engineering ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "flask_restful"@en ;
+    ns1:description "Service to parse CSV data as json objects to the React frontend"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "['flask_restful']"@en ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:model ;
+                    ns1:iodatatype ns1:csv_json_datahandler ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:uri ns1:csvjsonmodel .
+
+ns1:featureengineering a ns1:ML_featuretest ;
+    ns1:category ns1:feature_optimisation ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "panda"@en,
+        "sklearn"@en ;
+    ns1:description "Applying a gaven sklearn classification machine model testing on different feature selections and return a set of models."@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "sklearn"@en ;
+    ns1:input [ ns1:paramter [ ns1:iocategory ns1:datafile ;
+                    ns1:iodatatype ns1:pandas ;
+                    ns1:ioshape "X"@en ;
+                    ns1:pid "0"@en ],
+                [ ns1:iocategory ns1:model ;
+                    ns1:iodatatype ns1:logistic_regression ;
+                    ns1:pid "2"@en ],
+                [ ns1:iocategory ns1:pipeline ;
+                    ns1:iodatatype ns1:processor ;
+                    ns1:pid "3"@en ],
+                [ ns1:iocategory ns1:datafile ;
+                    ns1:iodatatype ns1:pandas ;
+                    ns1:ioshape "y"@en ;
+                    ns1:pid "1"@en ] ] ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:model ;
+                    ns1:iodatatype ns1:dict ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:uri ns1:featureengineering .
+
+ns1:featuremodelevaluation a ns1:ML_optimisation ;
+    ns1:category ns1:Supervise_Learning ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "panda"@en,
+        "sklearn"@en ;
+    ns1:description "Do cross_val_score of a dictionay of models on testing data and return both cross_val_scores and the best pipeline model"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "sklearn"@en ;
+    ns1:input [ ns1:paramter [ ns1:iocategory ns1:datafile ;
+                    ns1:iodatatype ns1:split ;
+                    ns1:ioshape "#y_train#"@en ;
+                    ns1:pid "2"@en ],
+                [ ns1:iocategory ns1:model ;
+                    ns1:iodatatype ns1:dict ;
+                    ns1:pid "0"@en ],
+                [ ns1:iocategory ns1:datafile ;
+                    ns1:iodatatype ns1:split ;
+                    ns1:ioshape "#X_train#"@en ;
+                    ns1:pid "1"@en ] ] ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:pipeline ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:uri ns1:featuremodelevaluation .
+
+ns1:genAnnDataCreation a ns1:Bioinfomatic_ETL ;
+    ns1:category ns1:Bioinformatics ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "pandas"@en,
+        "scanpy"@en ;
+    ns1:description "https://scanpy.readthedocs.io/en/stable/"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "annData"@en ;
+    ns1:input [ ns1:paramter [ ns1:iocategory ns1:datafile ;
+                    ns1:iodatatype ns1:two_csv ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:brain_raw ;
+                    ns1:iodatatype ns1:h5ad ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:uri ns1:genAnnDataCreation .
+
+ns1:genClustering a ns1:Bioinfomatic_genClustering ;
+    ns1:category ns1:Bioinformatics ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "matplotlib"@en,
+        "pandas"@en,
+        "scanpy"@en,
+        "seaborn"@en ;
+    ns1:description "https://scanpy.readthedocs.io/en/stable/"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "annData_clustering"@en ;
+    ns1:input [ ns1:paramter [ ns1:iocategory ns1:brain_embeddings ;
+                    ns1:iodatatype ns1:h5ad ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:brain_clusters ;
+                    ns1:iodatatype ns1:h5ad ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:uri ns1:genClustering .
+
+ns1:genDimReduce a ns1:Bioinfomatic_genDimReduce ;
+    ns1:category ns1:Bioinformatics ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "matplotlib"@en,
+        "pandas"@en,
+        "scanpy"@en,
+        "seaborn"@en,
+        "sklearn"@en ;
+    ns1:description "https://scanpy.readthedocs.io/en/stable/"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "annData_DimReduce"@en ;
+    ns1:input [ ns1:paramter [ ns1:iocategory ns1:brain_normalized ;
+                    ns1:iodatatype ns1:h5ad ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:brain_embeddings ;
+                    ns1:iodatatype ns1:h5ad ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:uri ns1:genDimReduce .
+
+ns1:genNormalisation a ns1:Bioinfomatic_genNormalisation ;
+    ns1:category ns1:Bioinformatics ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "matplotlib"@en,
+        "pandas"@en,
+        "scanpy"@en,
+        "seaborn"@en ;
+    ns1:description "https://scanpy.readthedocs.io/en/stable/"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "annData_Normalisation"@en ;
+    ns1:input [ ns1:paramter [ ns1:iocategory ns1:brain_qc ;
+                    ns1:iodatatype ns1:h5ad ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:brain_normalized ;
+                    ns1:iodatatype ns1:h5ad ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:uri ns1:genNormalisation .
+
+ns1:genQualityControl a ns1:Bioinfomatic_genQualityControl ;
+    ns1:category ns1:Bioinformatics ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "matplotlib"@en,
+        "pandas"@en,
+        "scanpy"@en,
+        "seaborn"@en ;
+    ns1:description "https://scanpy.readthedocs.io/en/stable/"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "annData_qualityControl"@en ;
+    ns1:input [ ns1:paramter [ ns1:iocategory ns1:brain_raw ;
+                    ns1:iodatatype ns1:h5ad ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:brain_qc ;
+                    ns1:iodatatype ns1:h5ad ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:uri ns1:genQualityControl .
+
+ns1:label2txt a ns1:Text_generation ;
+    ns1:category ns1:NLP_textgeneration ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "transformers"@en ;
+    ns1:description "https://huggingface.co/docs/transformers/index"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "transformers"@en ;
+    ns1:input [ ns1:paramter [ ns1:iocategory ns1:label ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:txt ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:uri ns1:label2txt .
+
+ns1:loadnormalpddata a ns1:ETL_load ;
+    ns1:category ns1:data_engineering ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "numpy"@en,
+        "pandas"@en ;
+    ns1:description "sklearn loading the data from csv to pandas"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "pandas"@en ;
+    ns1:input [ ns1:paramter [ ns1:iocategory ns1:datafile ;
+                    ns1:iodatatype ns1:csv ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:datafile ;
+                    ns1:iodatatype ns1:pandas ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:uri ns1:loadnormalpddata .
+
+ns1:lrsklmodel a ns1:MLmodel_classification,
+        ns1:New-Service-Akila ;
+    ns1:category ns1:Supervise_Learning ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "sklearn"@en ;
+    ns1:description "A basic Logistic Regression model for classification task implemented with sklearn"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "sklearn"@en ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:model ;
+                    ns1:iodatatype ns1:logistic_regression ;
+                    ns1:pid "0"@en ] ],
+        [ ns1:paramter [ ns1:iocategory ns1:model ;
+                    ns1:iodatatype ns1:logistic_regression ;
+                    ns1:pid "0"@en ] ],
+        [ ns1:paramter [ ns1:iocategory ns1:model ;
+                    ns1:iodatatype ns1:logistic_regression ;
+                    ns1:pid "0"@en ] ],
+        [ ns1:paramter [ ns1:iocategory ns1:model ;
+                    ns1:iodatatype ns1:logistic_regression ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:uri ns1:lrsklmodel .
+
+ns1:pipelinemodels a ns1:MLmodel_classification ;
+    ns1:category ns1:model_set ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency ""@en,
+        "panda"@en,
+        "sklearn"@en ;
+    ns1:description "Preparing models settings that are initialised with differnet feature combinations"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "sklearn"@en ;
+    ns1:input [ ns1:paramter [ ns1:iocategory ns1:datafile ;
+                    ns1:iodatatype ns1:split ;
+                    ns1:ioshape "#X_train#"@en ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:model ;
+                    ns1:iodatatype ns1:dict ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:uri ns1:pipelinemodels .
+
+ns1:scalling a ns1:ETL_transform ;
+    ns1:category ns1:data_engineering ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "sklearn"@en ;
+    ns1:description "data transforming function with scalling and encoding no input required"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "sklearn"@en ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:pipeline ;
+                    ns1:iodatatype ns1:processor ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:uri ns1:scalling .
+
+ns1:spliting a ns1:DE_split ;
+    ns1:category ns1:data_engineering ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "numpy"@en,
+        "sklearn"@en ;
+    ns1:description "Applying sklearn data spliting function"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "sklearn"@en ;
+    ns1:input [ ns1:paramter [ ns1:iocategory ns1:datafile ;
+                    ns1:iodatatype ns1:pandas ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:datafile ;
+                    ns1:iodatatype ns1:split ;
+                    ns1:ioshape "#X_train, X_test, y_train, y_test#"@en ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:uri ns1:spliting .
+
+ns1:text_generation_pipeline a ns1:Text_generation ;
+    ns1:category ns1:NLP_textgeneration ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "transformers"@en ;
+    ns1:description "https://huggingface.co/docs/transformers/index"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "transformers"@en ;
+    ns1:input [ ns1:paramter [ ns1:iocategory ns1:txt ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:paramter [ ns1:iocategory ns1:txt ;
+                    ns1:pid "0"@en ] ] ;
+    ns1:uri ns1:text_generation_pipeline .
+

@@ -1,0 +1,14 @@
+@prefix ns1: <http://aimicroservice.derby.ac.uk/> .
+
+ns1:scalling a ns1:ETL_ETL_transform ;
+    ns1:category ns1:data_engineering ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "sklearn"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "sklearn"@en ;
+    ns1:input [ ] ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:iocategory ns1:pipeline ;
+            ns1:iodatatype ns1:processor ] ;
+    ns1:uri ns1:scalling .
+

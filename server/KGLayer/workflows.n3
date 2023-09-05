@@ -1,0 +1,11 @@
+@prefix ns1: <http://aimicroservice.derby.ac.uk/> .
+
+ns1:a303e61d-f112-41c3-a002-a2dd40cd4d27 ns1:workflow [ ns1:wf_ims [ ns1:wf_id "0"@en ;
+                    ns1:wf_iloc "loadnormalpddata"@en ],
+                [ ns1:wf_id "1"@en ;
+                    ns1:wf_iloc "spliting"@en ],
+                [ ns1:wf_id "2"@en ;
+                    ns1:wf_iloc "pipelinemodels"@en ],
+                [ ns1:wf_id "3"@en ;
+                    ns1:wf_iloc "featuremodelevaluation"@en ] ] .
+

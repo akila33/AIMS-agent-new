@@ -1,0 +1,16 @@
+@prefix ns1: <http://aimicroservice.derby.ac.uk/> .
+
+ns1:loadnormalpddata a ns1:dataloading ;
+    ns1:category ns1:data_engineering ;
+    ns1:contributor <https://www.derby.ac.uk/staff/hongqing-yu/> ;
+    ns1:dependency "numpy"@en,
+        "pandas"@en ;
+    ns1:formate "py"@en ;
+    ns1:framwork "pandas"@en ;
+    ns1:input [ ns1:iocategory "datafile"@en ;
+            ns1:iodatatype "csv"@en ] ;
+    ns1:licence <https://en.wikipedia.org/wiki/Free-software_license> ;
+    ns1:output [ ns1:iocategory "datafile"@en ;
+            ns1:iodatatype "pandas"@en ] ;
+    ns1:uri ns1:loadnormalpddata .
+

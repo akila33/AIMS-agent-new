@@ -1,0 +1,40 @@
+@prefix ns1: <http://aimicroservice.derby.ac.uk/> .
+
+ns1:a303e61d-f112-41c3-a002-a2dd40cd4d27 a ns1:task ;
+    ns1:context ns1:12935e70-6f01-4740-bfdd-b6f6833f58e4 ;
+    ns1:desire_output [ ns1:iodatatype ns1:pipeline ] ;
+    ns1:domain "medical"@en ;
+    ns1:input [ ns1:iodatatype ns1:csv ] .
+
+ns1:12935e70-6f01-4740-bfdd-b6f6833f58e4 ns1:desire_output [ ns1:iodatatype ns1:pipeline ] ;
+    ns1:domain ns1:medical ;
+    ns1:input_data ns1:pkson ;
+    ns1:purpose ns1:ML_featuretest .
+
+ns1:pkson ns1:data_type ns1:csv ;
+    ns1:feature_number "23"@en ;
+    ns1:feature_type <http://aimicroservice.derby.ac.uk/feature/D2>,
+        <http://aimicroservice.derby.ac.uk/feature/DFA>,
+        <http://aimicroservice.derby.ac.uk/feature/HNR>,
+        <http://aimicroservice.derby.ac.uk/feature/Jitter:DDP>,
+        <http://aimicroservice.derby.ac.uk/feature/MDVP:APQ>,
+        <http://aimicroservice.derby.ac.uk/feature/MDVP:Fhi(Hz)>,
+        <http://aimicroservice.derby.ac.uk/feature/MDVP:Flo(Hz)>,
+        <http://aimicroservice.derby.ac.uk/feature/MDVP:Fo(Hz)>,
+        <http://aimicroservice.derby.ac.uk/feature/MDVP:Jitter(%)>,
+        <http://aimicroservice.derby.ac.uk/feature/MDVP:Jitter(Abs)>,
+        <http://aimicroservice.derby.ac.uk/feature/MDVP:PPQ>,
+        <http://aimicroservice.derby.ac.uk/feature/MDVP:RAP>,
+        <http://aimicroservice.derby.ac.uk/feature/MDVP:Shimmer>,
+        <http://aimicroservice.derby.ac.uk/feature/MDVP:Shimmer(dB)>,
+        <http://aimicroservice.derby.ac.uk/feature/NHR>,
+        <http://aimicroservice.derby.ac.uk/feature/PPE>,
+        <http://aimicroservice.derby.ac.uk/feature/RPDE>,
+        <http://aimicroservice.derby.ac.uk/feature/Shimmer:APQ3>,
+        <http://aimicroservice.derby.ac.uk/feature/Shimmer:APQ5>,
+        <http://aimicroservice.derby.ac.uk/feature/Shimmer:DDA>,
+        <http://aimicroservice.derby.ac.uk/feature/spread1>,
+        <http://aimicroservice.derby.ac.uk/feature/spread2>,
+        <http://aimicroservice.derby.ac.uk/feature/status> ;
+    ns1:record_nubmer "195"@en .
+

@@ -1,0 +1,22 @@
+@prefix ns1: <http://aimicroservice.derby.ac.uk/> .
+
+ns1:07a515cd-7b55-48d0-8da5-ae8492533360 ns1:context ns1:12935e70-6f01-4740-bfdd-b6f6833f58e4 .
+
+ns1:12935e70-6f01-4740-bfdd-b6f6833f58e4 ns1:policy_state "1"@en ;
+    ns1:solution ns1:c146e3d4-61ca-4703-b951-e639a6e5cede ;
+    ns1:workflow [ ns1:wf_ims [ ns1:reward "0.125"@en ;
+                    ns1:wf_id "2"@en ;
+                    ns1:wf_iloc "pipelinemodels"@en ],
+                [ ns1:reward "0.25"@en ;
+                    ns1:wf_id "0"@en ;
+                    ns1:wf_iloc "loadnormalpddata"@en ],
+                [ ns1:reward "0.0625"@en ;
+                    ns1:wf_id "3"@en ;
+                    ns1:wf_iloc "featuremodelevaluation"@en ],
+                [ ns1:reward "0.1875"@en ;
+                    ns1:wf_id "1"@en ;
+                    ns1:wf_iloc "spliting"@en ] ] .
+
+ns1:c146e3d4-61ca-4703-b951-e639a6e5cede ns1:reward "1"@en ;
+    ns1:s_iloc "KGLayer/models/a303e61d-f112-41c3-a002-a2dd40cd4d27.gz"@en .
+
